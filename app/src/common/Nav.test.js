@@ -9,7 +9,7 @@ describe("when using the Nav component",()=>{
     });
     it('should render the component', () => {
         const wrapper = mount(<Nav />);
-        expect(wrapper.text()).toBe('It Works!');;
+        expect(wrapper.text()).toBe('It Works!');
     });
 
 });
