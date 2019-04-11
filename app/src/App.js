@@ -3,26 +3,25 @@ import logo from './logo.svg';
 import Nav from "./common/Nav";
 
 import './App.css';
+import HomePage from "./home/HomePage";
+import UserPage from "./users/UserPage";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
           <Nav/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+        <Router>
+          <div>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/list" component={UserPage} />
+          </div>
+        </Router>
+
       </div>
     );
   }
