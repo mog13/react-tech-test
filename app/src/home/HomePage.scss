@@ -1,0 +1,23 @@
+@import "../scss/general";
+
+.HomePage{
+  width:100%;
+  //stop if filling entire ultra wides
+  max-width:1500px;
+  margin-left: auto;
+  margin-right: auto;
+  .users--container{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+
+  }
+  .filter-search--container {
+  width:100%;
+    @include  for-tablet-landscape-up{
+      width:300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

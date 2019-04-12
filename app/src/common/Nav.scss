@@ -1,7 +1,12 @@
+@import "../scss/general";
+
 .Nav {
-  background-color: #282c34;
-  h1 {
-    color:#61dafb;
+  background-color: $back;
+  .title {
+    color:$primary;
     margin:0;
+    text-align: center;
+    padding-top:5px;
+    padding-bottom: 15px;
   }
 }

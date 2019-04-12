@@ -1,0 +1,13 @@
+
+@import "../scss/general";
+
+.BasicInfo {
+ text-align: center;
+ ul {
+   list-style: none;
+   padding-inline-start: 0;
+ }
+   @include  for-tablet-landscape-up{
+    width:50%;
+  }
+}

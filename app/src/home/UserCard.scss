@@ -1,9 +1,14 @@
-
+@import "../scss/general";
 .UserCard {
   display:flex;
+  width:100%;
+  justify-content: center;
+  @include  for-tablet-landscape-up{
+  width:300px;
+}
   .profile-picture--container {
     .profile-picture {
-      width: 300px;
+      width: 50px;
     }
   }
 }

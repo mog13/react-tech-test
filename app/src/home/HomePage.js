@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import UserCard from "./UserCard";
 
+import "./HomePage.scss";
+
 class HomePage extends Component {
 
     constructor(props) {
@@ -47,7 +49,10 @@ class HomePage extends Component {
         return (
             <div className="HomePage">
                 {/* @todo   ADD ERROR HANDLING*/}
-                <input type="text"  placeholder="Search" onChange={this.filterList.bind(this)}/>
+                <div className="filter-search--container ">
+                    <input type="text" className="filter-search"  placeholder="Search" onChange={this.filterList.bind(this)}/>
+                </div>
+                <div className="users--container">
                 {!loading ? (
                     filteredUsers.map(user => {
                         const { id, name, email,phone } = user;
@@ -59,6 +64,7 @@ class HomePage extends Component {
                     //@todo add spinner
                     <h3>Loading...</h3>
                 )}
+                </div>
             </div>)
     }
 

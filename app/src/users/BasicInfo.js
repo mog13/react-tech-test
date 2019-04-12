@@ -5,13 +5,11 @@ class BasicInfo extends Component {
     render() {
         return (
             <div className="BasicInfo">
-                <h1>{this.props.name}</h1>
                 <ul>
-                    <li>{this.props.username}</li>
-                    <li>{this.props.email}</li>
-                    <li>{this.props.phone}</li>
-                    <li>{this.props.website}</li>
-
+                    <li><i className="far fa-user-circle"/> {this.props.username}</li>
+                    <li><i className="far fa-envelope"/> {this.props.email}</li>
+                    <li><i className="fas fa-phone"/> {this.props.phone}</li>
+                    <li><i className="fas fa-globe"/> {this.props.website}</li>
                 </ul>
             </div>
         );

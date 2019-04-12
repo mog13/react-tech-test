@@ -32,10 +32,10 @@ class UserPage extends Component {
     }
 
     render() {
-        const { loading, user, address, error } = this.state;
+        const { loading, user, error } = this.state;
         return (
             <div className="UserPage">
-                <h1>Im a specific user page</h1>
+                <h1 className="title">{user.name}</h1>
             {/* @todo   ADD ERROR HANDLING*/}
                 {!loading ? (
                     <div className="info--container">
@@ -44,19 +44,22 @@ class UserPage extends Component {
                     </div>
                         <BasicInfo name={user.name} username={user.username} phone={user.phone} email={user.email} website={user.website}/>
                         <CompanyInfo company={user.company}/>
-                        <Map className="map" center={user.address.geo} zoom={this.state.zoom}>
-                            <TileLayer
-                                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                            <Marker position={user.address.geo}>
-                                <Popup>
-                                    {user.address.street} {user.address.suite}
-                                    <br />{user.address.city}
-                                    <br />{user.address.zipcode}
-                                </Popup>
-                            </Marker>
-                        </Map>
+                        <div className="map--container">
+                            <Map className="map" center={user.address.geo} zoom={this.state.zoom}>
+                                <TileLayer
+                                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                />
+                                <Marker position={user.address.geo}>
+                                    <Popup>
+                                        {user.address.street} {user.address.suite}
+                                        <br />{user.address.city}
+                                        <br />{user.address.zipcode}
+                                    </Popup>
+                                </Marker>
+                            </Map>
+                        </div>
+
                     </div>
 
         ):(

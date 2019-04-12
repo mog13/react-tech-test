@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import Nav from "./common/Nav";
-
-import './App.css';
 import HomePage from "./home/HomePage";
 import UserPage from "./users/UserPage";
 import {BrowserRouter, Route} from "react-router-dom";
 
+import './App.css';
+import "./scss/general.scss";
 
 
 class App extends Component {

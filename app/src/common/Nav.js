@@ -5,7 +5,7 @@ class Nav extends Component {
     render() {
         return (
             <div className="Nav">
-                <h1>It Works!</h1>
+                <h1 className="title"> <i className="fas fa-users fa-x"/> React Users Dashboard</h1>
             </div>
         );
     }

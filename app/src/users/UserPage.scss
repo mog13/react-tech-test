@@ -1,9 +1,44 @@
-.profile-picture--container {
-  .profile-picture {
-    width: 300px;
+
+@import "../scss/general";
+
+.UserPage {
+  width:100%;
+  //stop if filling entire ultra wides
+  max-width:1500px;
+  margin-left: auto;
+  margin-right: auto;
+  .title {
+    text-align: center;
+  }
+.info--container {
+
+  @include  for-tablet-landscape-up{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .profile-picture--container {
+    display: flex;
+    justify-content: center;
+    @include  for-tablet-landscape-up{
+      width:50%;
+    }
+    .profile-picture {
+      width: 50%;
+      max-width: 400px;
+    }
+  }
+
+  .map--container {
+    height: 500px;
+    @include  for-tablet-landscape-up{
+      width: 50%;
+      height: 400px;
+      padding: 2%;
+    }
+    .map{
+      height: 100%;
+      width: 100%;
+    }
   }
 }
-
-.map{
-height:500px;
 }
