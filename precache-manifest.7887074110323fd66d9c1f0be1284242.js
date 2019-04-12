@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "97300fedfe919a833677",
+    "revision": "a8c8312179faf7ef58a2",
     "url": "/react-tech-test/static/css/main.76496f34.chunk.css"
   },
   {
-    "revision": "97300fedfe919a833677",
-    "url": "/react-tech-test/static/js/main.05ddb99b.chunk.js"
+    "revision": "a8c8312179faf7ef58a2",
+    "url": "/react-tech-test/static/js/main.8ffb2859.chunk.js"
   },
   {
     "revision": "8b6117edff50c9d94825",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/react-tech-test/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "c916f012221f4ba0ea5f8c1a0151b665",
+    "revision": "94499932c902628b5db8939e32d0ef49",
     "url": "/react-tech-test/index.html"
   }
 ];

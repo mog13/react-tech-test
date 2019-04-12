@@ -16,10 +16,10 @@ class App extends Component {
       <div className="App">
           <Nav/>
 
-        <HashRouter>
+        <HashRouter basename={process.env.PUBLIC_URL}>
           <Switch>
-            <Route exact path="https://mog13.github.io/react-tech-test/" component={HomePage} />
-            <Route path="https://mog13.github.io/react-tech-test/users/:id" component={UserPage} />
+            <Route exact path="/" component={HomePage} />
+            <Route path="/users/:id" component={UserPage} />
               <Route component={NotFound} />
           </Switch>
         </HashRouter>
