@@ -5,6 +5,9 @@ import CompanyInfo from "./ComapnyInfo";
 import "./UserPage.scss";
 import {Map, Marker, Popup, TileLayer} from "react-leaflet";
 import {Link} from "react-router-dom";
+import Loading from "../common/Loading";
+import Error from "../common/Error";
+
 class UserPage extends Component {
 
     state = {
@@ -29,48 +32,51 @@ class UserPage extends Component {
                     loading: false,
                 })
             )
-            .catch(error => this.setState({ error, loading: false }));
+            .catch(error => this.setState({error, loading: false}));
     }
 
     render() {
-        const { loading, user, error } = this.state;
+        const {loading, user, error} = this.state;
         return (
             <div className="UserPage">
                 <div className="return--container">
-                <Link className="return" to="/">back to users</Link>
+                    <Link className="return" to="/">back to users</Link>
                 </div>
-                    <h1 className="title">{user.name}</h1>
-            {/* @todo   ADD ERROR HANDLING*/}
+                <h1 className="title">{user.name}</h1>
 
-                {!loading ? (
-                    <div className="info--container">
 
-                        <BasicInfo name={user.name} username={user.username} phone={user.phone} email={user.email} website={user.website}/>
-                        <div className="profile-picture--container">
-                            <img className="profile-picture" src={logo}/>
+                {
+
+                    !error ? (!loading ? (
+                        <div className="info--container">
+
+                            <BasicInfo name={user.name} username={user.username} phone={user.phone} email={user.email}
+                                       website={user.website}/>
+                            <div className="profile-picture--container">
+                                <img className="profile-picture" src={logo}/>
+                            </div>
+                            <CompanyInfo company={user.company}/>
+                            <div className="map--container">
+                                <Map className="map" center={user.address.geo} zoom={this.state.zoom}>
+                                    <TileLayer
+                                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                    />
+                                    <Marker position={user.address.geo}>
+                                        <Popup>
+                                            {user.address.street} {user.address.suite}
+                                            <br/>{user.address.city}
+                                            <br/>{user.address.zipcode}
+                                        </Popup>
+                                    </Marker>
+                                </Map>
+                            </div>
+
                         </div>
-                        <CompanyInfo company={user.company}/>
-                        <div className="map--container">
-                            <Map className="map" center={user.address.geo} zoom={this.state.zoom}>
-                                <TileLayer
-                                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                />
-                                <Marker position={user.address.geo}>
-                                    <Popup>
-                                        {user.address.street} {user.address.suite}
-                                        <br />{user.address.city}
-                                        <br />{user.address.zipcode}
-                                    </Popup>
-                                </Marker>
-                            </Map>
-                        </div>
 
-                    </div>
-
-        ):(
-                    <h3>Loading...</h3>
-                )}
+                    ) : (
+                        <Loading/>
+                    )) : (<Error error={error}/>)}
 
             </div>)
     }

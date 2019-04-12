@@ -3,12 +3,13 @@ import { shallow } from 'enzyme';
 import UserPage from './UserPage';
 import "../setupTests";
 
-describe("when using the Nav component",()=>{
+describe("when using the User Page component",()=>{
     let wrapper;
+    let match = {params:{id:1}}
     beforeEach(()=>{;
          jest.spyOn(UserPage.prototype, 'componentDidMount');
          jest.spyOn(UserPage.prototype, 'fetchUsers');
-        wrapper = shallow(<UserPage />);
+        wrapper = shallow(<UserPage match={match} />);
     });
     it('should render the component', () => {
         expect(wrapper.find(".UserPage").length).toBe(1);

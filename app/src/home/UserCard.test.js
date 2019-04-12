@@ -3,7 +3,7 @@ import {mount, shallow} from 'enzyme';
 import UserCard from './UserCard';
 import "../setupTests";
 
-describe("when using thge User Card component",()=>{
+describe("when using the User Card component",()=>{
 
     describe("And i pass it props",()=>{
         let wrapper;

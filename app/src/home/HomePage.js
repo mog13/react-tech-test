@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import UserCard from "./UserCard";
 
 import "./HomePage.scss";
+import Loading from "../common/Loading";
+import Error from "../common/Error";
 
 class HomePage extends Component {
 
@@ -38,7 +40,7 @@ class HomePage extends Component {
                 this.setState({
                     users: data,
                     filteredUsers:data,
-                    loading: false,
+                    loading: false
                 })
             )
             .catch(error => this.setState({ error, loading: false }));
@@ -48,13 +50,13 @@ class HomePage extends Component {
         const { loading, filteredUsers, error } = this.state;
         return (
             <div className="HomePage">
-                {/* @todo   ADD ERROR HANDLING*/}
                 <div className="filter-search--container ">
                     <i className="fas fa-search"/>
                     <input type="text" className="filter-search"  placeholder="search" onChange={this.filterList.bind(this)}/>
                 </div>
                 <div className="users--container">
-                {!loading ? (
+                {
+                    !error?(!loading ? (
                     filteredUsers.map(user => {
                         const { id, name, email,phone } = user;
                         return (<UserCard key={user.id} name={name} email={email} phone={phone} id={id}/>)
@@ -62,9 +64,8 @@ class HomePage extends Component {
                     })
 
                 ):(
-                    //@todo add spinner
-                    <h3>Loading...</h3>
-                )}
+                    <Loading/>
+                )): (<Error error={error}/>)}
                 </div>
             </div>)
     }

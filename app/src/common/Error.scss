@@ -1,0 +1,15 @@
+@import "../scss/general";
+
+.Error{
+  text-align: center;
+  .message{
+    color:$primary;
+    font-family: $headerFont;
+    .header{
+      font-weight: bold;
+      font-size: 1.7rem;
+      color:$accent;
+      text-decoration: underline;
+    }
+  }
+}
