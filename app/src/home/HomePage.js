@@ -2,14 +2,31 @@ import React, { Component } from 'react';
 import UserCard from "./UserCard";
 
 class HomePage extends Component {
-    state = {
-        loading: true,
-        users: [],
-        error: null
-    };
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading: true,
+            users: [],
+            filteredUsers:[],
+            error: null
+        };
+    }
+
+
 
     componentDidMount() {
         this.fetchUsers();
+    }
+
+    filterList (event) {
+        let filteredUsers = this.state.users.slice();
+        filteredUsers = filteredUsers.filter(function(user){
+            return user.name.toLowerCase().search(
+                event.target.value.toLowerCase()) !== -1;
+        });
+        this.setState({filteredUsers});
     }
 
     fetchUsers() {
@@ -18,6 +35,7 @@ class HomePage extends Component {
             .then(data =>
                 this.setState({
                     users: data,
+                    filteredUsers:data,
                     loading: false,
                 })
             )
@@ -25,12 +43,13 @@ class HomePage extends Component {
     }
 
     render() {
-        const { loading, users, error } = this.state;
+        const { loading, filteredUsers, error } = this.state;
         return (
             <div className="HomePage">
                 {/* @todo   ADD ERROR HANDLING*/}
+                <input type="text"  placeholder="Search" onChange={this.filterList.bind(this)}/>
                 {!loading ? (
-                    users.map(user => {
+                    filteredUsers.map(user => {
                         const { id, name, email,phone } = user;
                         return (<UserCard key={user.id} name={name} email={email} phone={phone} id={id}/>)
 
