@@ -53,7 +53,7 @@ class UserPage extends Component {
                             <BasicInfo name={user.name} username={user.username} phone={user.phone} email={user.email}
                                        website={user.website}/>
                             <div className="profile-picture--container">
-                                <img className="profile-picture" src={logo}/>
+                                <img className="profile-picture" src={logo} alt="Normally an avatar but for this app the react logo"/>
                             </div>
                             <CompanyInfo company={user.company}/>
                             <div className="map--container">

@@ -24,7 +24,7 @@ class UserCard extends Component {
         return (
             <div className="UserCard " onClick={()=>this.handleClick()}>
                 <div className="profile-picture--container">
-                    <img className="profile-picture" src={logo}/>
+                    <img className="profile-picture" src={logo} alt="Normally an avatar but for this app the react logo"/>
                 </div>
                 <ul className="overview--container">
                     <li className="name" data-hook="name">{this.props.name}</li>
