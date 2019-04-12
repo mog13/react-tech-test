@@ -5,7 +5,7 @@ import Nav from "./common/Nav";
 import './App.css';
 import HomePage from "./home/HomePage";
 import UserPage from "./users/UserPage";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 
 
 
@@ -15,12 +15,12 @@ class App extends Component {
       <div className="App">
           <Nav/>
 
-        <Router>
+        <BrowserRouter>
           <div>
             <Route exact path="/" component={HomePage} />
-            <Route path="/list" component={UserPage} />
+            <Route path="/user/:id" component={UserPage} />
           </div>
-        </Router>
+        </BrowserRouter>
 
       </div>
     );

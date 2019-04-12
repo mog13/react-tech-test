@@ -31,8 +31,8 @@ class HomePage extends Component {
                 {/* @todo   ADD ERROR HANDLING*/}
                 {!loading ? (
                     users.map(user => {
-                        const { username, name, email,phone } = user;
-                        return (<UserCard name={name} email={email} phone={phone}/>)
+                        const { id, name, email,phone } = user;
+                        return (<UserCard name={name} email={email} phone={phone} id={id}/>)
 
                     })
 

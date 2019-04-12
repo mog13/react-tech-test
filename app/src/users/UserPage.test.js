@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import sinon from "sinon"
+import { shallow } from 'enzyme';
 import UserPage from './UserPage';
 import "../setupTests";
 
@@ -9,7 +8,7 @@ describe("when using the Nav component",()=>{
     beforeEach(()=>{;
          jest.spyOn(UserPage.prototype, 'componentDidMount');
          jest.spyOn(UserPage.prototype, 'fetchUsers');
-        wrapper = mount(<UserPage />);
+        wrapper = shallow(<UserPage />);
     });
     it('should render the component', () => {
         expect(wrapper.find(".UserPage").length).toBe(1);
