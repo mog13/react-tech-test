@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import Nav from "./common/Nav";
 import HomePage from "./home/HomePage";
 import UserPage from "./users/UserPage";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 import './App.scss';
+import NotFound from "./common/NotFound";
 
 
 
@@ -16,10 +17,11 @@ class App extends Component {
           <Nav/>
 
         <BrowserRouter>
-          <div>
+          <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/users/:id" component={UserPage} />
-          </div>
+              <Route component={NotFound} />
+          </Switch>
         </BrowserRouter>
 
       </div>
