@@ -18,8 +18,8 @@ class App extends Component {
 
         <HashRouter>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/users/:id" component={UserPage} />
+            <Route exact path="https://mog13.github.io/react-tech-test/" component={HomePage} />
+            <Route path="https://mog13.github.io/react-tech-test/users/:id" component={UserPage} />
               <Route component={NotFound} />
           </Switch>
         </HashRouter>
