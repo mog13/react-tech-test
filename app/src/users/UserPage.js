@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-
+import logo from "../logo.svg";
+import BasicInfo from "./BasicInfo";
+import CompanyInfo from "./ComapnyInfo";
+import "./UserPage.scss";
 class UserPage extends Component {
 
     state = {
         loading: true,
-        users: [],
+        user: [],
         error: null
     };
 
@@ -13,11 +16,11 @@ class UserPage extends Component {
     }
 
     fetchUsers() {
-        fetch(`https://jsonplaceholder.typicode.com/users`)
+        fetch(`https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`)
             .then(response => response.json())
             .then(data =>
                 this.setState({
-                    users: data,
+                    user: data,
                     loading: false,
                 })
             )
@@ -25,23 +28,19 @@ class UserPage extends Component {
     }
 
     render() {
-        const { loading, users, error } = this.state;
+        const { loading, user, error } = this.state;
         return (
             <div className="UserPage">
                 <h1>Im a specific user page</h1>
             {/* @todo   ADD ERROR HANDLING*/}
                 {!loading ? (
-                    users.map(user => {
-                        const { username, name, email } = user;
-                        return (
-                            <div key={username}>
-                                <p>Name: {name}</p>
-                                <p>Email Address: {email}</p>
-                                <hr />
-                            </div>
-                        )
-                    })
-
+                    <div className="info--container">
+                    <div className="profile-picture--container">
+                        <img className="profile-picture" src={logo}/>
+                    </div>
+                        <BasicInfo name={user.name} username={user.username} phone={user.phone} email={user.email} website={user.website}/>
+                        <CompanyInfo company={user.company}/>
+                    </div>
         ):(
                     <h3>Loading...</h3>
                 )}
