@@ -4,6 +4,7 @@ import BasicInfo from "./BasicInfo";
 import CompanyInfo from "./ComapnyInfo";
 import "./UserPage.scss";
 import {Map, Marker, Popup, TileLayer} from "react-leaflet";
+import {Link} from "react-router-dom";
 class UserPage extends Component {
 
     state = {
@@ -35,8 +36,12 @@ class UserPage extends Component {
         const { loading, user, error } = this.state;
         return (
             <div className="UserPage">
-                <h1 className="title">{user.name}</h1>
+                <div className="return--container">
+                <Link className="return" to="/">back to users</Link>
+                </div>
+                    <h1 className="title">{user.name}</h1>
             {/* @todo   ADD ERROR HANDLING*/}
+
                 {!loading ? (
                     <div className="info--container">
 
