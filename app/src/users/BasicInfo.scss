@@ -6,6 +6,17 @@
  ul {
    list-style: none;
    padding-inline-start: 0;
+   li{
+     color:$white;
+     font-family: $primaryFont;
+     font-size:1.3rem;
+     margin-bottom: 10px;
+
+     .icon{
+       color:$accent;
+       margin-right: 5px;
+     }
+   }
  }
    @include  for-tablet-landscape-up{
     width:50%;

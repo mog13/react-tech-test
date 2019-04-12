@@ -1,0 +1,10 @@
+@import "./scss/general.scss";
+
+html, body{
+    height:100%;
+    @include backGradient();
+    font-family: $primaryFont;
+}
+* {
+    box-sizing: border-box;
+}

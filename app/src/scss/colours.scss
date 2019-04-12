@@ -1,4 +1,9 @@
 $back: #282c34;
-$primary: #52cbc1;
+$primary: #61dafb;
 $secondary: #a2cbc7;
 $accent: #dc71cb;
+$white:#f1f1f1;
+
+@mixin backGradient{
+  background-image: linear-gradient(to right bottom, $back,  lighten($back,10%));
+}

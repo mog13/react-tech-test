@@ -9,6 +9,16 @@
   margin-right: auto;
   .title {
     text-align: center;
+    color: #61dafb;
+    font-family: "Roboto", sans-serif;
+    font-size: 3rem;
+    border-bottom: 4px solid #dc71cb;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    @include  for-tablet-landscape-up {
+      margin-bottom: 100px;
+    }
   }
 .info--container {
 
@@ -19,6 +29,8 @@
   .profile-picture--container {
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
     @include  for-tablet-landscape-up{
       width:50%;
     }

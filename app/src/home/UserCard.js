@@ -26,11 +26,11 @@ class UserCard extends Component {
                 <div className="profile-picture--container">
                     <img className="profile-picture" src={logo}/>
                 </div>
-                <div className="overview--container">
-                    <p data-hook="name">{this.props.name}</p>
-                    <p data-hook="email">{this.props.email}</p>
-                    <p data-hook="phone">{this.props.phone}</p>
-                </div>
+                <ul className="overview--container">
+                    <li className="name" data-hook="name">{this.props.name}</li>
+                    <li className="email" data-hook="email">{this.props.email}</li>
+                    <li className="phone" data-hook="phone">{this.props.phone}</li>
+                </ul>
             </div>
         );
     }

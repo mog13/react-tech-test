@@ -50,7 +50,8 @@ class HomePage extends Component {
             <div className="HomePage">
                 {/* @todo   ADD ERROR HANDLING*/}
                 <div className="filter-search--container ">
-                    <input type="text" className="filter-search"  placeholder="Search" onChange={this.filterList.bind(this)}/>
+                    <i className="fas fa-search"/>
+                    <input type="text" className="filter-search"  placeholder="search" onChange={this.filterList.bind(this)}/>
                 </div>
                 <div className="users--container">
                 {!loading ? (

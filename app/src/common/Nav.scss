@@ -1,12 +1,15 @@
 @import "../scss/general";
 
 .Nav {
-  background-color: $back;
+  background-color: $primary;
+  cursor: pointer;
   .title {
-    color:$primary;
+    color:$back;
     margin:0;
     text-align: center;
     padding-top:5px;
     padding-bottom: 15px;
+    font-family: $headerFont;
+    text-transform: uppercase;
   }
 }

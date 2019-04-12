@@ -39,10 +39,11 @@ class UserPage extends Component {
             {/* @todo   ADD ERROR HANDLING*/}
                 {!loading ? (
                     <div className="info--container">
-                    <div className="profile-picture--container">
-                        <img className="profile-picture" src={logo}/>
-                    </div>
+
                         <BasicInfo name={user.name} username={user.username} phone={user.phone} email={user.email} website={user.website}/>
+                        <div className="profile-picture--container">
+                            <img className="profile-picture" src={logo}/>
+                        </div>
                         <CompanyInfo company={user.company}/>
                         <div className="map--container">
                             <Map className="map" center={user.address.geo} zoom={this.state.zoom}>

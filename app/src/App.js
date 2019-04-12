@@ -5,8 +5,8 @@ import HomePage from "./home/HomePage";
 import UserPage from "./users/UserPage";
 import {BrowserRouter, Route} from "react-router-dom";
 
-import './App.css';
-import "./scss/general.scss";
+import './App.scss';
+
 
 
 class App extends Component {
