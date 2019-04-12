@@ -11,6 +11,7 @@ class BasicInfo extends Component {
                     <li>{this.props.email}</li>
                     <li>{this.props.phone}</li>
                     <li>{this.props.website}</li>
+
                 </ul>
             </div>
         );
