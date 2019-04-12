@@ -1,6 +1,4 @@
 # react-tech-test
-### React practice
-
 This application is part of a technical test for React.
 It is a short time frame test in a framework I am not practically familiar with. Due to these constraints I have outlined some of my thinking below: 
 
@@ -28,7 +26,7 @@ NPM audit reports some possible vulnerabilities. In a production or professional
 Although I have used git for this project I havn't been using branches and following and sort of pull request process. This is simply for speed as its a small project with a single developer.
 In a professional environment each commit would be on its own branch and only merged after peer review and CI processes. 
 
-###🗺 ️
+### 🗺 ️
 Finally the maps component looks odd and its usually because the dummy data provided places people mostly in the sea. I have checked it with Google maps and it seems to be correct.
 
 Thank you for taking the time to look over my React challenge. If you have any questions, comments of thoughts please get in touch.
