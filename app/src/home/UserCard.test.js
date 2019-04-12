@@ -37,12 +37,10 @@ describe("when using the User Card component",()=>{
         describe("should go to user page when clicked",()=>{
         beforeEach(()=>{
             wrapper.find(".UserCard").simulate("click");
-            wrapper.instance().forceUpdate();
-            wrapper.update();
-
         });
 
             it('should now show a redirect', function () {
+                //@todo this does not work as expected. forcing an update doesnt fix it.
                 // expect(wrapper.find("redirect").length).toBe(1);
                 expect(wrapper.state("toUser")).toBe(true)
             });
