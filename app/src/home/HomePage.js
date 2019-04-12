@@ -32,7 +32,7 @@ class HomePage extends Component {
                 {!loading ? (
                     users.map(user => {
                         const { id, name, email,phone } = user;
-                        return (<UserCard name={name} email={email} phone={phone} id={id}/>)
+                        return (<UserCard key={user.id} name={name} email={email} phone={phone} id={id}/>)
 
                     })
 
