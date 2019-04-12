@@ -3,6 +3,7 @@
 .Nav {
   background-color: $primary;
   cursor: pointer;
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.75);
   .title {
     color:$back;
     margin:0;

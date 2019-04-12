@@ -6,12 +6,20 @@
  ul {
    list-style: none;
    padding-inline-start: 0;
-   li{
+   .info{
      color:$white;
      font-family: $primaryFont;
      font-size:1.3rem;
      margin-bottom: 10px;
 
+     a{
+       color:$white;
+       font-family: $primaryFont;
+       font-size:1.3rem;
+       margin-bottom: 10px;
+       text-decoration: none;
+
+     }
      .icon{
        color:$accent;
        margin-right: 5px;
