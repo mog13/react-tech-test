@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
           <Nav/>
 
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename="/react-tech-test/">
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/users/:id" component={UserPage} />
