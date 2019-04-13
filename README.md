@@ -1,4 +1,6 @@
 # react-tech-test
+
+ ## see it in action here:https://mog13.github.io/react-tech-test
 This application is part of a technical test for React.
 It is a short time frame test in a framework I am not practically familiar with. Due to these constraints I have outlined some of my thinking below: 
 
